@@ -1,0 +1,11 @@
+services:
+  redis:
+    image: redis
+
+  backend:
+    build:
+      context: .
+    environment:
+      REDIS_HOST: redis
+    ports:
+      - 5000:5000
